@@ -57,7 +57,7 @@ class Data extends Equatable {
     return _cellType;
   }
 
-  void set cellType(CellType t) {
+  set cellType(CellType t) {
     _cellType = t;
   }
 
