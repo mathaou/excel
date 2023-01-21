@@ -4,7 +4,7 @@ part of excel;
 class Data extends Equatable {
   CellStyle? _cellStyle;
   late dynamic _value;
-  CellType _cellType = CellType.String;
+  CellType cellType = CellType.String;
   late Sheet _sheet;
   late String _sheetName;
   bool _isFormula = false;
@@ -22,7 +22,7 @@ class Data extends Equatable {
           value_: dataObject._value,
           cellStyleVal: dataObject._cellStyle,
           isFormulaVal: dataObject._isFormula,
-          cellTypeVal: dataObject._cellType,
+          cellTypeVal: dataObject.cellType,
         );
 
   ///
@@ -41,7 +41,7 @@ class Data extends Equatable {
     _value = value_;
     _cellStyle = cellStyleVal;
     _isFormula = isFormulaVal;
-    _cellType = cellTypeVal;
+    cellType = cellTypeVal;
     _sheetName = sheet.sheetName;
     _rowIndex = row;
     _colIndex = col;
@@ -50,15 +50,6 @@ class Data extends Equatable {
   /// returns the newData object when called from Sheet Class
   static Data newData(Sheet sheet, int row, int col) {
     return Data._(sheet, row, col);
-  }
-
-  /// returns the cell type
-  CellType get cellType {
-    return _cellType;
-  }
-
-  set cellType(CellType t) {
-    _cellType = t;
   }
 
   /// returns true is the cellType is CellType.Formula

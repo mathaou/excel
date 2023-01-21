@@ -983,8 +983,8 @@ class Sheet {
     _sheetData[rowIndex]![columnIndex]!._isFormula =
         value is Formula || value.runtimeType == Formula;
 
-    /// Sets type of the Data to `_cellType`
-    _sheetData[rowIndex]![columnIndex]!._cellType =
+    /// Sets type of the Data to `cellType`
+    _sheetData[rowIndex]![columnIndex]!.cellType =
         _getCellType(value.runtimeType);
 
     if ((_maxCols - 1) < columnIndex) {
