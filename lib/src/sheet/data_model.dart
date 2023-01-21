@@ -57,6 +57,10 @@ class Data extends Equatable {
     return _cellType;
   }
 
+  void set cellType(CellType t) {
+    _cellType = t;
+  }
+
   /// returns true is the cellType is CellType.Formula
   bool get isFormula {
     return _isFormula;
