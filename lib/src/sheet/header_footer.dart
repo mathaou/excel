@@ -166,13 +166,15 @@ class HeaderFooter {
   static HeaderFooter fromXmlElement(XmlElement headerFooterElement) {
     return HeaderFooter(
         alignWithMargins:
-            headerFooterElement.getAttribute("alignWithMargins")?.parseBool(),
+            (headerFooterElement.getAttribute("alignWithMargins") ?? "0") !=
+                "0",
         differentFirst:
-            headerFooterElement.getAttribute("differentFirst")?.parseBool(),
+            (headerFooterElement.getAttribute("differentFirst") ?? "0") != "0",
         differentOddEven:
-            headerFooterElement.getAttribute("differentOddEven")?.parseBool(),
+            (headerFooterElement.getAttribute("differentOddEven") ?? "0") !=
+                "0",
         scaleWithDoc:
-            headerFooterElement.getAttribute("scaleWithDoc")?.parseBool(),
+            (headerFooterElement.getAttribute("scaleWithDoc") ?? "0") != "0",
         evenFooter: headerFooterElement.getElement("evenFooter")?.innerXml,
         evenHeader: headerFooterElement.getElement("evenHeader")?.innerXml,
         firstFooter: headerFooterElement.getElement("firstFooter")?.innerXml,
